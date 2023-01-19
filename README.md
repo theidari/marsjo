@@ -6,7 +6,7 @@
 <img src="https://raw.githubusercontent.com/theidari/marsjo/main/design/po_file_main_edt.png" width="900px">
 <p>
 <ol><b>Objective</b></ol>
-<ol>This project consists of two technical products
+<ol>This project consists of two technical products</ol>
 <p align="center">
 <img src="https://raw.githubusercontent.com/theidari/marsjo/main/design/re_file_main_edt.png" width="900px">
 <p>
