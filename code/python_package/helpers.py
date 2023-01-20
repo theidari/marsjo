@@ -13,6 +13,8 @@ from bs4 import BeautifulSoup as soup
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+import json as js
+
 
 
 
@@ -55,34 +57,23 @@ def simple_line (df,param,label=[],addline=[]):
         plt.savefig(OUTPUT_PATH+label[1]+" per "+label[0]+".png",dpi=300, bbox_inches='tight')
         return plt.show()
 
-# a-3) bar chart
-# matplotlib.pyplot.bar(x, height, width=0.8, bottom=None, *, align='center', data=None, **kwargs)
-def simple_bar (df,param,x_name,y_name):
-    # plot size
-    plt.figure(figsize=(PLT_WIDTH,PLT_HIGHT))
-    # plot main describtion
-    plt.bar(df.index, df[param] , width=BAR_WIDTH, color=BAR_COLOR, alpha=1, align="center")
-    plt.xticks(rotation='horizontal', fontsize=TICKS_FONT_SIZE)
-    plt.yticks(fontsize=TICKS_FONT_SIZE)
-    plt.title(y_name+"_per_"+x_name, fontsize=TITLE_FONT_SIZE)
-    plt.xlabel(x_name, fontsize=LABEL_FONT_SIZE)
-    plt.ylabel(y_name, fontsize=LABEL_FONT_SIZE)
-    plt.legend([y_name], loc = LEGEND_LOCATION, fontsize=LEGEND_FONT_SIZE)
-    # plt save
-    plt.savefig(OUTPUT_PATH+y_name+"_per_"+x_name+".png",dpi=300, bbox_inches="tight")
-    return plt.show()
-# -------------------------------------------------------------------------------------------------------/
+# b-2) bar chart
 def bar_chart (df,param,error,x_name,y_name):
+    min_lim=df[param].min()-(0.05*abs(df[param].min()))
+    max_lim=df[param].max()+(0.05*abs(df[param].max()))
     # plot size
     plt.figure(figsize=(PLT_WIDTH,PLT_HIGHT))
     # plot main describtion
     plt.bar(df.index, df[param] , yerr=error, width=BAR_WIDTH, color=BAR_COLOR, alpha=1, align="center", ecolor='k', capsize=2)
+    plt.ylim(min_lim,max_lim)
     plt.xticks(rotation='horizontal', fontsize=TICKS_FONT_SIZE)
     plt.yticks(fontsize=TICKS_FONT_SIZE)
-    plt.title(y_name+"_per_"+x_name, fontsize=TITLE_FONT_SIZE)
+    plt.title(y_name +" per "+x_name, fontsize=TITLE_FONT_SIZE)
     plt.xlabel(x_name, fontsize=LABEL_FONT_SIZE)
     plt.ylabel(y_name, fontsize=LABEL_FONT_SIZE)
     plt.legend([y_name], loc = LEGEND_LOCATION, fontsize=LEGEND_FONT_SIZE)
     # plt save
     plt.savefig(OUTPUT_PATH+y_name+"_per_"+x_name+".png",dpi=300, bbox_inches="tight")
     return plt.show()
+    # -------------------------------------------------------------------------------------------------------/
+
