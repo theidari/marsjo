@@ -3,62 +3,48 @@
 # --------------------------------------------------------------------------------------------------------
 
 # 1. folders and files name -----------------------------------------------------------------------------/
-BROWSER             = "chrome"
-PROCESSING_TOOL     = "html.parser"
+BROWSER              = "chrome"
+PROCESSING_TOOL      = "html.parser"
 
-
-
-MARS_NEWS_URL       = "https://static.bc-edx.com/data/web/mars_news/index.html"
-MARS_TEMP_URL       = "https://static.bc-edx.com/data/web/mars_facts/temperature.html"
-OUTPUT_PATH         = "../Output/"
-
-
-lng                 = "longitude"
-lat                 = "latitude"
-time_length         = "12 month"         
-tobs                = "Temperatures Observed"
-station             = "Station"
-freq                = "Frequency"
-prcp                = "Precipitation"
-MAP_NAME            = "Honolulu"
 # -------------------------------------------------------------------------------------------------------/
 
 # 2. defining directories -------------------------------------------------------------------------------/
-db_path             = "sqlite:///../Resources/hawaii.sqlite"
+MARS_NEWS_URL        = "https://static.bc-edx.com/data/web/mars_news/index.html"
+MARS_TEMP_URL        = "https://static.bc-edx.com/data/web/mars_facts/temperature.html"
+OUTPUT_PATH          = "../Output/"
 # -------------------------------------------------------------------------------------------------------/
 
-# 3. station location (station_location.py) constants ---------------------------------------------------/
-SESSION_COLUMN_NAME = ["station", "name", "latitude", "longitude", "elevation", "number_of_colected_data"]
+# 3. plot -----------------------------------------------------------------------------------------------/
+# a-3) simple line
+    # figure size
+LINE_PLT_WIDTH       = 12
+LINE_PLT_HIGHT       = 5
+    # plt.plot properties
+LINE_COLOR           = "#ac7434"
+LINE_ALPHA           = 1
+LINE_WIDTH           = 1
+    # plt.ticks properties
+LINE_TICKS_FONT_SIZE = 8
+    # plt.label properties
+LINE_LABEL_FONT_SIZE = 10
+    # plt.legend properties
+LINE_LEGEND_FONT_SIZE = 10
+    # plt.title properties
+LINE_TITLE_FONT_SIZE = 12
 
-# 4. plot -----------------------------------------------------------------------------------------------/
 
-# a-4) map plot constants
+# c-4) bar chart constants
+PLT_HIGHT          = 6
+PLT_WIDTH          = 10
+BAR_WIDTH          = 0.8 #(between 0.01 to 1)
+BAR_COLOR          = "#af2f0d"
+BAR_ALPHA          = 1
+LEGEND_LOCATION    = "best"
+LEGEND_FONT_SIZE   = 10
+TITLE_FONT_SIZE    = 15
+LABEL_FONT_SIZE    = 12
+TICKS_FONT_SIZE    = 10
 
-MAP_WEIGTH          = 550
-MAP_HEIGHT          = 475
-MAP_TOOLS           = "hover"
-MARKER_SHAPE        = "triangle_dot"
-MARKER_SIZE         = 15
-MARKER_FILL_COLOR   = "red"
-MARKER_FILL_ALPHA   = 0.5
-MARKER_LINE_COLOR   = "black"
-MARKER_LINE_ALPHA   = 0.8
-
-# b-4) histogram and line constants
-title_font_size     = 15
-label_font_size     = 12
-ticks_font_size     = 10
-legend_font_size    = 10
-font_weight         = "bold"
-plt_fig_higth       = 10
-plt_fig_width       = 8
-plt_color           = "tab:blue"
-legend_location     = "best"
-his_x_label         = "Temperature"
-his_y_label         = "Frequency"
-line_x_label        = "Date (yyyy-mm-dd)"
-line_y_label        = "Inches"
-line_width          = 1 
 # -------------------------------------------------------------------------------------------------------/
 
 

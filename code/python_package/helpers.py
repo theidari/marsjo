@@ -12,72 +12,77 @@ from bs4 import BeautifulSoup as soup
 # b-1) import relevant libraries
 import matplotlib.pyplot as plt
 import pandas as pd
+import numpy as np
 
 
 
 # -------------------------------------------------------------------------------------------------------/
 
 # 2. function definition --------------------------------------------------------------------------------/
-# a-2) station location plotting function (map)
-def station_location(df, kdims): # df = DataFrame # variable column
-    station_location = gv.Dataset(df, kdims=[kdims])
-    locs = station_location.to(gv.Points, [lng, lat], ["station", "elevation", "number_of_colected_data"])
-    locs_plot=(gts.OSM  * locs).opts(
-        opts.Points(
-        width      = MAP_WEIGTH,
-        height     = MAP_HEIGHT,
-        tools      = [MAP_TOOLS],
-        marker     = MARKER_SHAPE,
-        size       = MARKER_SIZE,
-        fill_color = MARKER_FILL_COLOR, 
-        fill_alpha = MARKER_FILL_ALPHA,
-        line_color = MARKER_LINE_COLOR,    
-        line_alpha = MARKER_LINE_ALPHA
-        ))
-    gv.save(locs_plot, output_url+MAP_NAME+".html")
-    return locs_plot
-
-# a-3) histogram plot
-def histogram (df, bins, location):
-    # plot size
-    plt.figure(figsize=(plt_fig_higth,plt_fig_width))
-    # plot main describtion
-    plt.hist(np.array(df), color = plt_color, bins=bins)
-    # ticks definitions
-    plt.yticks(size=ticks_font_size)
-    plt.xticks(size=ticks_font_size)
-    # labels definitions
-    plt.xlabel(his_x_label,fontsize=label_font_size)
-    plt.ylabel(his_y_label,fontsize=label_font_size)
-    # title definitions
-    plt.title(tobs+" at "+location+" in "+time_length, fontsize=title_font_size, fontweight = font_weight, pad=+20)
-    # legend definitions
-    plt.legend([tobs], loc = legend_location, fontsize=legend_font_size)
-    # plt save
-    plt.savefig(output_url+tobs+"_at_"+location+"_in_"+time_length+".png",dpi=300, bbox_inches='tight')
-    return plt.show()
-
-# a-3) line graph
-def line (df,date_in,date_out, location):
+# a-2) line graph
+def simple_line (df,param,label=[],addline=[]):
     # data length
     length=len(df.index)
     # plot size
-    plt.figure(figsize=(plt_fig_higth,plt_fig_width))
+    plt.figure(figsize=(LINE_PLT_WIDTH,LINE_PLT_HIGHT))
     # plot main describtion
-    plt.plot(df, color = plt_color, linewidth=line_width)
+    plt.plot(df.index, df[param] , color = LINE_COLOR, linewidth=LINE_WIDTH)
     # ticks definitions
-    plt.xticks(np.arange(0,length,50), rotation = 90, rotation_mode = 'anchor',ha = 'right', fontsize=ticks_font_size)
-    plt.yticks(fontsize=ticks_font_size)
+    plt.xticks(np.arange(0,length,50), rotation = 90, rotation_mode = 'anchor',ha = 'right', fontsize=LINE_TICKS_FONT_SIZE)
+    plt.yticks(fontsize=LINE_TICKS_FONT_SIZE)
     # lim definitions
-    plt.xlim(date_in,date_out)
+    plt.xlim(df.index[0],df.index[-1])
     # label definitions
-    plt.xlabel(line_x_label, fontsize=label_font_size)
-    plt.ylabel(line_y_label, fontsize=label_font_size)
+    plt.xlabel(label[0], fontsize=LINE_LABEL_FONT_SIZE)
+    plt.ylabel(label[1], fontsize=LINE_LABEL_FONT_SIZE)
     # title definitions
-    plt.title(prcp+" in "+location+" from "+date_in+" to "+date_out, fontsize=title_font_size, fontweight = font_weight, pad=+20)
+    plt.title(label[1]+" per "+label[0], fontsize=LINE_TITLE_FONT_SIZE, pad=+20)
     # legend definitions
-    plt.legend([prcp], loc = legend_location, fontsize=legend_font_size)
+    plt.legend([label[1]], loc = LEGEND_LOCATION, fontsize=LINE_LEGEND_FONT_SIZE)
+    # vertical_line
+    if len(addline)==0:
+        # plt save
+        plt.savefig(OUTPUT_PATH+label[1]+" per "+label[0]+".png",dpi=300, bbox_inches='tight')
+        return plt.show()
+    else:
+        if addline[0]=="v":
+            for addline_index in addline[1:]:
+                plt.axvline(x=addline_index,color='black',linestyle='dashed',linewidth=LINE_WIDTH)
+        elif addline[0]=="h":
+            for addline_index in addline[1:]:
+                plt.axhline(y=addline_index,color='black',linestyle='dashed',linewidth=LINE_WIDTH)
+        # plt save
+        plt.savefig(OUTPUT_PATH+label[1]+" per "+label[0]+".png",dpi=300, bbox_inches='tight')
+        return plt.show()
+
+# a-3) bar chart
+# matplotlib.pyplot.bar(x, height, width=0.8, bottom=None, *, align='center', data=None, **kwargs)
+def simple_bar (df,param,x_name,y_name):
+    # plot size
+    plt.figure(figsize=(PLT_WIDTH,PLT_HIGHT))
+    # plot main describtion
+    plt.bar(df.index, df[param] , width=BAR_WIDTH, color=BAR_COLOR, alpha=1, align="center")
+    plt.xticks(rotation='horizontal', fontsize=TICKS_FONT_SIZE)
+    plt.yticks(fontsize=TICKS_FONT_SIZE)
+    plt.title(y_name+"_per_"+x_name, fontsize=TITLE_FONT_SIZE)
+    plt.xlabel(x_name, fontsize=LABEL_FONT_SIZE)
+    plt.ylabel(y_name, fontsize=LABEL_FONT_SIZE)
+    plt.legend([y_name], loc = LEGEND_LOCATION, fontsize=LEGEND_FONT_SIZE)
     # plt save
-    plt.savefig(output_url+prcp+"_in_"+location+"_from_"+date_in+"_to_"+date_out+".png",dpi=300, bbox_inches='tight')
+    plt.savefig(OUTPUT_PATH+y_name+"_per_"+x_name+".png",dpi=300, bbox_inches="tight")
     return plt.show()
 # -------------------------------------------------------------------------------------------------------/
+def bar_chart (df,param,error,x_name,y_name):
+    # plot size
+    plt.figure(figsize=(PLT_WIDTH,PLT_HIGHT))
+    # plot main describtion
+    plt.bar(df.index, df[param] , yerr=error, width=BAR_WIDTH, color=BAR_COLOR, alpha=1, align="center", ecolor='k', capsize=2)
+    plt.xticks(rotation='horizontal', fontsize=TICKS_FONT_SIZE)
+    plt.yticks(fontsize=TICKS_FONT_SIZE)
+    plt.title(y_name+"_per_"+x_name, fontsize=TITLE_FONT_SIZE)
+    plt.xlabel(x_name, fontsize=LABEL_FONT_SIZE)
+    plt.ylabel(y_name, fontsize=LABEL_FONT_SIZE)
+    plt.legend([y_name], loc = LEGEND_LOCATION, fontsize=LEGEND_FONT_SIZE)
+    # plt save
+    plt.savefig(OUTPUT_PATH+y_name+"_per_"+x_name+".png",dpi=300, bbox_inches="tight")
+    return plt.show()
