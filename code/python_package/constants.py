@@ -33,18 +33,25 @@ LINE_LEGEND_FONT_SIZE = 10
 LINE_TITLE_FONT_SIZE = 12
 
 
-# c-4) bar chart
-PLT_HIGHT          = 6
+# b-3) bar chart
+    # figure size
 PLT_WIDTH          = 10
-BAR_WIDTH          = 0.8 #(between 0.01 to 1)
+PLT_HIGHT          = 6
+    # plt.plot properties
 BAR_COLOR          = "#a57e52"
-BAR_ALPHA          = 1
-LEGEND_LOCATION    = "best"
-LEGEND_FONT_SIZE   = 10
-TITLE_FONT_SIZE    = 12
-LABEL_FONT_SIZE    = 10
+BAR_ALPHA          = 1    
+BAR_WIDTH          = 0.8 #(between 0.01 to 1)
+    # plt.ticks properties
 TICKS_FONT_SIZE    = 8
+    # plt.label properties
+LABEL_FONT_SIZE    = 10
+    # plt.legend properties
+LEGEND_FONT_SIZE   = 10
+    # plt.title properties
+TITLE_FONT_SIZE    = 12
 
+# c-3) general
+LEGEND_LOCATION    = "best"
 # -------------------------------------------------------------------------------------------------------/
 
 
