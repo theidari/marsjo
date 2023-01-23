@@ -37,11 +37,23 @@ This project, consists of two technical products:</br>
 <p align="center">
 <img src="https://raw.githubusercontent.com/theidari/marsjo/main/design/re_file_main_edt.png" width="900px">
 <p>
+<p align="center"><ins><b>Scrape Titles and Preview Text from Mars News</b></ins></p>
+The result looks as follows , and it is stored as <a href="https://github.com/theidari/marsjo/blob/main/output/News_Result_Data.json">.json</a> and <a href="https://github.com/theidari/marsjo/blob/main/output/News_Result_Data.csv">.csv</a> files.</br>
+
+```python
+{'title': "NASA's MAVEN Observes Martian Light Show Caused by Major Solar Storm",
+  'preview': 'For the first time in its eight years orbiting Mars, NASA’s MAVEN mission witnessed two different types of ultraviolet aurorae simultaneously, the result of solar storms that began on Aug. 27.'}  
+```
+
+<p align="center"><ins><b>Scrape and Analyze Mars Weather Data</b></ins></p>
+
+
+<h6 align="center">Fig[1]: mars news</h6>
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/theidari/marsjo/main/design/doref_file_main_edt.png" width="900px">
 <p>
-<ol><img src="https://raw.githubusercontent.com/theidari/marsjo/main/design/dot_main_edt.png" width="7px"> <b>Documents</b></ol>
+<ol><b>Documents</b></ol>
 
 <ol><b>References</b></ol>
 <ol>
