@@ -52,24 +52,32 @@ The result looks as follows , and it is stored as <a href="https://github.com/th
  1. how many months are there on mars? <b>12</b>
  2. mow many martian days' worth of data are there? <b>1867</b>
  3. What is the average low temperature by martian month? </br>
-  result for average low temperature is stored in <a href="https://github.com/theidari/marsjo/blob/main/output/min_temp.csv">.csv</a> file and shows in figure [1].</br>
+  result for <ins>average low temperature</ins> is stored in <a href="https://github.com/theidari/marsjo/blob/main/output/min_temp.csv">.csv</a> file and shows in figure [1]. On average, the <b>third</b> month has the coldest minimum temperature on Mars, and the <b>eighth</b> month is the warmest.</br>
 <h6 align="center">Fig[1]: average low temperature by martian month</h6>
 <p align="center">
-<img src="https://github.com/theidari/marsjo/blob/main/output/Average%20Min_temp_per_Month.png" width="900px">
+<img src="https://github.com/theidari/marsjo/blob/main/output/Average%20Min_temp_per_Month.png" width="700px">
 <p>
 
- 4. What is the average pressure by martian month?
- 5. How many terrestrial (earth) days are there in a martian year?
-
-
-</ol>
+ 4. What is the average pressure by martian month?</br>
+ result for <ins>average pressure</ins> is stored in <a href="https://github.com/theidari/marsjo/blob/main/output/pressure.csv">.csv</a> file and shows in figure [2]. Atmospheric pressure is, on average, lowest in the <b>sixth</b> month and highest in the <b>ninth</b>.
+<h6 align="center">Fig[2]: average pressure by martian month</h6>
 <p align="center">
-<img src="https://raw.githubusercontent.com/theidari/marsjo/main/design/doref_file_main_edt.png" width="900px">
+<img src="https://github.com/theidari/marsjo/blob/main/output/Average%20Pressure_per_Month.png" width="700px">
 <p>
-<ol><b>Documents</b></ol>
-
-<ol><b>References</b></ol>
+ 
+ 5. How many terrestrial (earth) days are there in a martian year?</br>
+The distance from peak to peak is roughly 1425-750, or 675 days(<a href="https://raw.githubusercontent.com/theidari/marsjo/main/output/Minimum%20Temprature%20per%20Terrestrial%20Daysv703.png">see more accurate date 703-1390</a>). A year on Mars appears to be about 675 days from the plot. Internet search confirms that a Mars year is equivalent to <b>687</b> earth days.
+<h6 align="center">Fig[3]: terrestrial (earth) days in a martian year</h6>
+<p align="center">
+<img src="https://github.com/theidari/marsjo/blob/main/output/Minimum%20Temprature%20per%20Terrestrial%20Daysv750.png" width="700px">
+<p>
+</ol>
 <ol>
+<p align="center">
+<img src="https://github.com/theidari/marsjo/blob/main/design/doref_file_main_edt.png" width="900px">
+<p>
+<b>References</b>
+
 <sup>[1]</sup> The <a href="https://static.bc-edx.com/data/web/mars_news/index.html">Mars News website</a> is operated by edX Boot Camps LLC for educational purposes only. The news article titles, summaries, dates, and images were scraped from <a href="https://mars.nasa.gov/">NASA's Mars News</a>website in November 2022. Images are used according to the <a href="https://www.jpl.nasa.gov/jpl-image-use-policy">JPL Image Use Policy</a>courtesy NASA/JPL-Caltech.</br>
 <sup>[2]</sup> Trilogy Education Services, a <a href="https://2u.com/">2U, Inc.</a> brand.
 </ol>
