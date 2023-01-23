@@ -90,3 +90,24 @@ class Mars_News():
     def set_name(cls,name_id):
         cls.name      = name_id.capitalize()+"_Result_Data" 
 # -------------------------------------------------------------------------------------------------------/
+
+# 3. google search --------------------------------------------------------------------------------------/
+class GoogleSearch():
+    
+    def __init__(self, question):
+        self.question  = question
+    
+    def set_search(self):
+        url         = "https://google.com/search?q="+self.question
+        browser = Browser(BROWSER)
+        browser.visit(url)
+        html = browser.html
+        self.google_soup = soup(html ,PROCESSING_TOOL)
+        browser.quit()
+    def get_search(self):  
+        return self.google_soup
+    
+    def find_result(self, tag="div", class_=""):
+        result_show = self.google_soup.find(tag,class_).text
+        return print(result_show)
+# -------------------------------------------------------------------------------------------------------/

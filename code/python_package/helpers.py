@@ -14,6 +14,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import json as js
+import requests
 # -------------------------------------------------------------------------------------------------------/
 
 # 2. function definition --------------------------------------------------------------------------------/
@@ -50,7 +51,7 @@ def simple_line (df,param,label=[],addline=[]):
             for addline_index in addline[1:]:
                 plt.axhline(y=addline_index,color='black',linestyle='dashed',linewidth=LINE_WIDTH)
         # plt save
-        plt.savefig(OUTPUT_PATH+label[1]+" per "+label[0]+".png",dpi=300, bbox_inches='tight')
+        plt.savefig(OUTPUT_PATH+label[1]+" per "+label[0]+str(addline[0])+str(addline[1])+".png",dpi=300, bbox_inches='tight')
         return plt.show()
 
 # b-2) bar chart
