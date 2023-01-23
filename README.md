@@ -37,6 +37,8 @@ This project, consists of two technical products:</br>
 <p align="center">
 <img src="https://raw.githubusercontent.com/theidari/marsjo/main/design/re_file_main_edt.png" width="900px">
 <p>
+
+<ol>
 <p align="center"><ins><b>Scrape Titles and Preview Text from Mars News</b></ins></p>
 The result looks as follows , and it is stored as <a href="https://github.com/theidari/marsjo/blob/main/output/News_Result_Data.json">.json</a> and <a href="https://github.com/theidari/marsjo/blob/main/output/News_Result_Data.csv">.csv</a> files.</br>
 
@@ -47,9 +49,20 @@ The result looks as follows , and it is stored as <a href="https://github.com/th
 
 <p align="center"><ins><b>Scrape and Analyze Mars Weather Data</b></ins></p>
 
+ 1. how many months are there on mars? <b>12</b>
+ 2. mow many martian days' worth of data are there? <b>1867</b>
+ 3. What is the average low temperature by martian month? </br>
+  result for average low temperature is stored in <a href="https://github.com/theidari/marsjo/blob/main/output/min_temp.csv">.csv</a> file and shows in figure [1].</br>
+<h6 align="center">Fig[1]: average low temperature by martian month</h6>
+<p align="center">
+<img src="https://github.com/theidari/marsjo/blob/main/output/Average%20Min_temp_per_Month.png" width="900px">
+<p>
 
-<h6 align="center">Fig[1]: mars news</h6>
+ 4. What is the average pressure by martian month?
+ 5. How many terrestrial (earth) days are there in a martian year?
 
+
+</ol>
 <p align="center">
 <img src="https://raw.githubusercontent.com/theidari/marsjo/main/design/doref_file_main_edt.png" width="900px">
 <p>
