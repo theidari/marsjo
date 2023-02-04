@@ -1,7 +1,7 @@
 <p align="center">
 <img src="https://raw.githubusercontent.com/theidari/marsjo/main/design/header_main_wide_edt.png" width="900px">
 <p>
-<ol><b>Mars</b> is the fourth planet from the Sun and the second-smallest planet in the Solar System. Mars has long been the subject of human interest. This planet has been explored remotely by spacecraft. In the late 20th century, Earth-based probes have made it possible to learn more about the Martian system, particularly its geology and potential for habitability.</ol>
+<p align="justify"><ol><b>Mars</b> is the fourth planet from the Sun and the second-smallest planet in the Solar System. Mars has long been the subject of human interest. This planet has been explored remotely by spacecraft. In the late 20th century, Earth-based probes have made it possible to learn more about the Martian system, particularly its geology and potential for habitability.</ol></p>
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/theidari/marsjo/main/design/po_file_main_edt.png" width="900px">
