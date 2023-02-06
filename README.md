@@ -78,12 +78,12 @@ The distance from peak to peak is roughly 1425-750, or 675 days (<a href="https:
 <p></ol>
 <ol><b>References</b></ol>
 <ol>
-<sup>[1]</sup> The <a href="https://static.bc-edx.com/data/web/mars_news/index.html">Mars News website</a> is operated by edX Boot Camps LLC for educational purposes only. The news article titles, summaries, dates, and images were scraped from <a href="https://mars.nasa.gov/">NASA's Mars News</a>website in November 2022. Images are used according to the <a href="https://www.jpl.nasa.gov/jpl-image-use-policy">JPL Image Use Policy</a>courtesy NASA/JPL-Caltech.</br>
+<sup>[1]</sup> The <a href="https://static.bc-edx.com/data/web/mars_news/index.html">Mars News website</a> is operated by edX Boot Camps LLC for educational purposes only. The news article titles, summaries, dates, and images were scraped from <a href="https://mars.nasa.gov/">NASA's Mars News</a> website in November 2022. Images are used according to the <a href="https://www.jpl.nasa.gov/jpl-image-use-policy">JPL Image Use Policy</a>courtesy NASA/JPL-Caltech.</br>
 <sup>[2]</sup> Trilogy Education Services, a <a href="https://2u.com/">2U, Inc.</a> brand.
 </ol>
 
 
 <p align="right">
-<a href="https://github.com/theidari/pymaceuticals#overview-of-project-"><sup>TOP PAGE</sup></a>
+<a href="https://github.com/theidari/marsjo"><sup>TOP PAGE</sup></a>
 </P>
 
